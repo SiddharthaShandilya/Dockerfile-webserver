@@ -1,0 +1,15 @@
+FROM centos
+RUN yum update -y
+RUN yum install httpd -y
+RUN echo httpd installed perfectly
+RUN yum install net-tools -y
+RUN echo 'net-tools installed perfectly'
+RUN yum install openssh-server -y
+RUN  echo 'ssh downloaded perfectly'
+RUN  /usr/sbin/httpd
+RUN echo '/usr/sbin/httpd' >> /root/.bashrc
+RUN cat /root/.bashrc
+RUN echo '/usr/sbin/httpd' >> /root/.bashrc
+COPY index.html /var/www/html/
+CMD  ifocnfig
+RUN echo 'everything worked perfectly'
